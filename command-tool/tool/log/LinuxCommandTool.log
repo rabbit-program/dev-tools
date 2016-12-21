@@ -1,0 +1,7 @@
+2016-12-20 16:48:19.747 [ main ] - [ INFO  ] [ com.king.linux.tool.TestApplication : 88 ] - set map json => [{"key":"192.168.1.117","time":1482219509956,"value":{"portText":"22","userText":"root","respText":"","pwdText":"root123","ipText":"192.168.1.117","runText":"","uploadText":"/tmp"}}]
+2016-12-20 16:48:19.776 [ main ] - [ INFO  ] [ com.king.linux.tool.TestApplication : 421 ] - 设置默认历史key:192.168.1.117
+2016-12-20 16:48:33.827 [ Thread-3 ] - [ ERROR ] [ com.king.linux.sftp.SessionServer : 71 ] - 192.168.1.117 connect fail
+com.jcraft.jsch.JSchException: Session.connect: java.net.SocketTimeoutException: Read timed out
+	at com.jcraft.jsch.Session.connect(Session.java:558) ~[LinuxCommandTool.jar:na]
+	at com.king.linux.sftp.SessionServer$1.run(SessionServer.java:66) ~[LinuxCommandTool.jar:na]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]

@@ -1,0 +1,172 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.king.linux</groupId>
+	<artifactId>command-tool</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<name>LinuxCommandGenerationTool</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<jodd.version>3.7</jodd.version>
+		<guava.version>19.0</guava.version>
+		<jdk.version>1.8</jdk.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>jdk1.7</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<jdk>${jdk.version}</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.source>${jdk.version}</maven.compiler.source>
+				<maven.compiler.target>${jdk.version}</maven.compiler.target>
+				<maven.compiler.compilerVersion>${jdk.version}</maven.compiler.compilerVersion>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<finalName>LinuxCommandTool</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<encoding>UTF-8</encoding>
+							<outputDirectory>${basedir}/tool</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}</directory>
+									<includes>
+										<include>conf/*.ftl</include>
+										<include>conf/*.properties</include>
+										<include>shell/*</include>
+										<include>*.db</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<!-- not append assembly id in release file name -->
+					<appendAssemblyId>false</appendAssemblyId>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>com.king.linux.tool.DefApplication</mainClass>
+						</manifest>
+					</archive>
+					<!-- è¾åºç®å½ -->
+					<outputDirectory>${basedir}/tool</outputDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>assembly</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>0.1.53</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.15</version>
+		</dependency>
+
+		<!-- joddéç½® -->
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-core</artifactId>
+			<version>${jodd.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-bean</artifactId>
+			<version>${jodd.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-lagarto</artifactId>
+			<version>${jodd.version}</version>
+		</dependency>
+
+		<!-- logbackæ¥å¿éç½® -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+
+		<!-- freemarker -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.20</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mapdb/mapdb -->
+		<dependency>
+			<groupId>org.mapdb</groupId>
+			<artifactId>mapdb</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.software</groupId>
+			<artifactId>org.eclipse.swt.win32.win32.x86</artifactId>
+			<version>64_3.105.1.v20160907-0248</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>

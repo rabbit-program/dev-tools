@@ -1,0 +1,54 @@
+2016-12-20 15:28:25.318 [ Thread-3 ] - [ ERROR ] [ com.king.linux.sftp.SessionServer : 71 ] - 192.167.1.117 connect fail
+com.jcraft.jsch.JSchException: timeout: socket is not established
+	at com.jcraft.jsch.Util.createSocket(Util.java:394) ~[jsch-0.1.53.jar:na]
+	at com.jcraft.jsch.Session.connect(Session.java:215) ~[jsch-0.1.53.jar:na]
+	at com.king.linux.sftp.SessionServer$1.run(SessionServer.java:66) ~[classes/:na]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-12-20 15:28:33.371 [ Thread-5 ] - [ ERROR ] [ com.king.linux.sftp.SessionServer : 71 ] - 192.167.1.171 connect fail
+com.jcraft.jsch.JSchException: timeout: socket is not established
+	at com.jcraft.jsch.Util.createSocket(Util.java:394) ~[jsch-0.1.53.jar:na]
+	at com.jcraft.jsch.Session.connect(Session.java:215) ~[jsch-0.1.53.jar:na]
+	at com.king.linux.sftp.SessionServer$1.run(SessionServer.java:66) ~[classes/:na]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-12-20 15:28:42.451 [ Thread-7 ] - [ ERROR ] [ com.king.linux.sftp.SessionServer : 71 ] - 192.167.1.177 connect fail
+com.jcraft.jsch.JSchException: timeout: socket is not established
+	at com.jcraft.jsch.Util.createSocket(Util.java:394) ~[jsch-0.1.53.jar:na]
+	at com.jcraft.jsch.Session.connect(Session.java:215) ~[jsch-0.1.53.jar:na]
+	at com.king.linux.sftp.SessionServer$1.run(SessionServer.java:66) ~[classes/:na]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-12-20 15:28:54.180 [ Thread-9 ] - [ ERROR ] [ com.king.linux.sftp.SessionServer : 71 ] - 192.168.1.177 connect fail
+com.jcraft.jsch.JSchException: timeout: socket is not established
+	at com.jcraft.jsch.Util.createSocket(Util.java:394) ~[jsch-0.1.53.jar:na]
+	at com.jcraft.jsch.Session.connect(Session.java:215) ~[jsch-0.1.53.jar:na]
+	at com.king.linux.sftp.SessionServer$1.run(SessionServer.java:66) ~[classes/:na]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-12-20 15:29:00.771 [ Thread-11 ] - [ ERROR ] [ com.king.linux.sftp.SessionServer : 71 ] - 192.168.1.117 connect fail
+com.jcraft.jsch.JSchException: timeout: socket is not established
+	at com.jcraft.jsch.Util.createSocket(Util.java:394) ~[jsch-0.1.53.jar:na]
+	at com.jcraft.jsch.Session.connect(Session.java:215) ~[jsch-0.1.53.jar:na]
+	at com.king.linux.sftp.SessionServer$1.run(SessionServer.java:66) ~[classes/:na]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-12-20 15:29:06.923 [ Thread-13 ] - [ ERROR ] [ com.king.linux.sftp.SessionServer : 71 ] - 192.168.1.177 connect fail
+com.jcraft.jsch.JSchException: timeout: socket is not established
+	at com.jcraft.jsch.Util.createSocket(Util.java:394) ~[jsch-0.1.53.jar:na]
+	at com.jcraft.jsch.Session.connect(Session.java:215) ~[jsch-0.1.53.jar:na]
+	at com.king.linux.sftp.SessionServer$1.run(SessionServer.java:66) ~[classes/:na]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-12-20 15:29:41.551 [ Thread-15 ] - [ ERROR ] [ com.king.linux.sftp.SessionServer : 71 ] - 192.168.1.117 connect fail
+com.jcraft.jsch.JSchException: Session.connect: java.net.SocketTimeoutException: Read timed out
+	at com.jcraft.jsch.Session.connect(Session.java:558) ~[jsch-0.1.53.jar:na]
+	at com.king.linux.sftp.SessionServer$1.run(SessionServer.java:66) ~[classes/:na]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_111]
+2016-12-20 15:35:15.198 [ Thread-17 ] - [ INFO  ] [ com.king.linux.sftp.SessionServer : 67 ] - 192.168.1.117 connect success
+2016-12-20 15:35:20.929 [ main ] - [ INFO  ] [ com.king.linux.sftp.SFTPServer : 54 ] - ls [/] success
+2016-12-20 15:35:30.126 [ main ] - [ INFO  ] [ com.king.linux.sftp.SFTPServer : 54 ] - ls [/] success
+2016-12-20 15:35:39.785 [ main ] - [ INFO  ] [ com.king.linux.sftp.SFTPServer : 54 ] - ls [/tmp] success
+2016-12-20 15:35:47.962 [ main ] - [ INFO  ] [ com.king.linux.sftp.SFTPServer : 54 ] - ls [/tmp] success
+2016-12-20 15:36:36.556 [ Thread-3 ] - [ INFO  ] [ com.king.linux.sftp.SessionServer : 67 ] - 192.168.1.117 connect success
+2016-12-20 15:36:52.988 [ main ] - [ INFO  ] [ com.king.linux.sftp.SFTPServer : 54 ] - ls [/tmp] success
+2016-12-20 15:38:29.955 [ main ] - [ INFO  ] [ com.king.linux.tool.TestApplication : 82 ] - get map json => [{"portText":"22","userText":"root","respText":"","pwdText":"root123","ipText":"192.168.1.117","runText":"","uploadText":"/tmp"}]
+2016-12-20 15:38:30.015 [ main ] - [ INFO  ] [ com.king.linux.database.MyModificationListener : 15 ] - key:[192.168.1.117] oldValue:[null] newValue:[com.king.linux.database.ApplicationVo@584f54e6] triggered:[false]
+2016-12-20 15:39:11.664 [ main ] - [ INFO  ] [ com.king.linux.tool.TestApplication : 88 ] - set map json => [{"key":"192.168.1.117","time":1482219509956,"value":{"portText":"22","userText":"root","respText":"","pwdText":"root123","ipText":"192.168.1.117","runText":"","uploadText":"/tmp"}}]
+2016-12-20 15:39:11.701 [ main ] - [ INFO  ] [ com.king.linux.tool.TestApplication : 422 ] - 设置默认历史key:192.168.1.117
+2016-12-20 15:39:15.675 [ Thread-3 ] - [ INFO  ] [ com.king.linux.sftp.SessionServer : 67 ] - 192.168.1.117 connect success
+2016-12-20 15:39:17.185 [ main ] - [ INFO  ] [ com.king.linux.sftp.SFTPServer : 54 ] - ls [/tmp] success
